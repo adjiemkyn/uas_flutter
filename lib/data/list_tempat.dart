@@ -8,7 +8,7 @@ class resep {
       required this.image});
 }
 
-List<resep> dataTempat = [
+List<resep> dataWisata = [
   resep(
       name: 'Pantai Pandawa',
       htm: '45K',

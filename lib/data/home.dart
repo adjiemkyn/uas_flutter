@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts/data/details.dart';
 import 'package:project_uts/data/list_tempat.dart';
 
 class home extends StatelessWidget {
