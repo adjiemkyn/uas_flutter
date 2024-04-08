@@ -13,7 +13,7 @@ List<lokasi> dataWisata = [
       name: 'Pantai Pandawa',
       htm: '45K',
       deskripsi:
-          'Objek wisata pantai pandawa terletak di Desa Kutuh, Kecamatan Kuta Selatan, Badung, Bali. Pantai pandawa menawarkan keindahan alam dengan pasir putih dan air laut yang jernih.',
+          'Pantai Pandawa adalah salah satu tempat wisata di area Kuta selatan, Kabupaten Badung, Bali. Pantai ini terletak di balik perbukitan dan sering disebut sebagai Pantai Rahasia. Di sekitar pantai ini terdapat dua tebing yang sangat besar yang pada salah satu sisinya dipahat lima patung Pandawa dan Kunti. Pantai pandawa menawarkan keindahan alam dengan pasir putih dan air laut yang jernih.',
       image: 'assets/Pantai-Pandawa.jpg'),
   lokasi(
       name: 'Garuda Wisnu Kencana',

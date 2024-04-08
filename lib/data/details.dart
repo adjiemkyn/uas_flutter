@@ -8,6 +8,9 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Mendapatkan informasi tentang ukuran layar menggunakan MediaQuery
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -30,20 +33,26 @@ class DetailScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
                   lokasii.image,
-                  width: 600,
-                  height: 350,
+                  // width: 700,
+                  // height: 350,
+                  // fit: BoxFit.cover,
+                  width: screenSize.width *
+                      0.6, // Lebar gambar mengikuti lebar layar
+                  height: screenSize.width *
+                      0.35, // Tinggi gambar mengikuti lebar layar dengan rasio tertentu
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 3,
             ),
             Text(
               lokasii.name,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 35,
+                fontSize: screenSize.width *
+                    0.04, // Ukuran font mengikuti lebar layar
               ),
             ),
             Text('HTM: ${lokasii.htm}'),
@@ -51,11 +60,11 @@ class DetailScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 lokasii.deskripsi,
-                maxLines: 15,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'MyCustomFont',
-                  fontSize: 20,
+                  fontSize: screenSize.width *
+                      0.02, // Ukuran font mengikuti lebar layar
                   color: Colors.black,
                 ),
               ),
