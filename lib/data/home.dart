@@ -9,7 +9,16 @@ class home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Destinasi Wisata'),
+        centerTitle: true,
+        title: Text(
+          'Daftar Destinasi Wisata',
+          style: TextStyle(
+            fontFamily: 'MyCustomFont',
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 37, 134, 244),
       ),
       body: ListView.builder(
           itemCount: dataWisata.length,
@@ -20,12 +29,12 @@ class home extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => DetailScreen(
-                              reseps: dataWisata[index],
+                              lokasii: dataWisata[index],
                             )));
               },
               child: Card(
                 child: Row(
-                  children: [
+                  children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: ClipRRect(
@@ -41,15 +50,21 @@ class home extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(dataWisata[index].name,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 25,
-                                color: Colors.blueAccent)),
-                        Text('HTM : ${dataWisata[index].htm}'),
+                        Text(
+                          dataWisata[index].name,
+                          style: TextStyle(
+                            fontFamily: 'MyCustomFont',
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'HTM : ${dataWisata[index].htm}',
+                        ),
                         ClipOval(
                           child: Material(
-                            color: Colors.blue, // button color
+                            color: Color.fromARGB(
+                                255, 168, 170, 168), // button color
                             child: InkWell(
                               splashColor: Colors.red, // inkwell color
                               child: SizedBox(

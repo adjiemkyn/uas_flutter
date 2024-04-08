@@ -2,56 +2,66 @@ import 'package:flutter/material.dart';
 import 'package:project_uts/data/list_tempat.dart';
 
 class DetailScreen extends StatelessWidget {
-  final resep reseps;
+  final lokasi lokasii;
 
-  const DetailScreen({Key? key, required this.reseps}) : super(key: key);
+  const DetailScreen({Key? key, required this.lokasii}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(reseps.name),
+        title: Text(
+          lokasii.name,
+          style: TextStyle(
+            fontFamily: 'MyCustomFont',
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 37, 134, 244),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: Image.asset(
-                reseps.image,
-                width: 400,
-                height: 250,
-                fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  lokasii.image,
+                  width: 600,
+                  height: 350,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            reseps.name,
-            style: TextStyle(
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              lokasii.name,
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 35,
-                color: Colors.blueAccent),
-          ),
-          Text('HTM: ${reseps.htm}'),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              reseps.deskripsi,
-              maxLines: 15,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.brown,
               ),
             ),
-          ),
-        ],
+            Text('HTM: ${lokasii.htm}'),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                lokasii.deskripsi,
+                maxLines: 15,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'MyCustomFont',
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
