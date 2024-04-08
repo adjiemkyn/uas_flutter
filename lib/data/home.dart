@@ -7,6 +7,9 @@ class home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Mendapatkan informasi tentang ukuran layar menggunakan MediaQuery
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -41,42 +44,48 @@ class home extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                         child: Image.asset(
                           dataWisata[index].image,
-                          width: 150,
-                          height: 150,
+                          width: screenSize.width *
+                              0.2, // Menggunakan persentase lebar layar
+                          height: screenSize.width *
+                              0.2, // Menggunakan persentase lebar layar
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          dataWisata[index].name,
-                          style: TextStyle(
-                            fontFamily: 'MyCustomFont',
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'HTM : ${dataWisata[index].htm}',
-                        ),
-                        ClipOval(
-                          child: Material(
-                            color: Color.fromARGB(
-                                255, 168, 170, 168), // button color
-                            child: InkWell(
-                              splashColor: Colors.red, // inkwell color
-                              child: SizedBox(
-                                  width: 30,
-                                  height: 30,
-                                  child: Icon(Icons.favorite)),
-                              onTap: () {},
+                    SizedBox(
+                      width: screenSize.width *
+                          0.3, // Menggunakan persentase lebar layar
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            dataWisata[index].name,
+                            style: TextStyle(
+                              fontFamily: 'MyCustomFont',
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                        )
-                      ],
-                    )
+                          Text(
+                            'HTM : ${dataWisata[index].htm}',
+                          ),
+                          ClipOval(
+                            child: Material(
+                              color: Color.fromARGB(
+                                  255, 168, 170, 168), // button color
+                              child: InkWell(
+                                splashColor: Colors.red, // inkwell color
+                                child: SizedBox(
+                                    width: 30,
+                                    height: 30,
+                                    child: Icon(Icons.favorite)),
+                                onTap: () {},
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
