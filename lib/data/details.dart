@@ -33,9 +33,6 @@ class DetailScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
                   lokasii.image,
-                  // width: 700,
-                  // height: 350,
-                  // fit: BoxFit.cover,
                   width: screenSize.width *
                       0.6, // Lebar gambar mengikuti lebar layar
                   height: screenSize.width *
@@ -52,7 +49,7 @@ class DetailScreen extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: screenSize.width *
-                    0.04, // Ukuran font mengikuti lebar layar
+                    0.03, // Ukuran font mengikuti lebar layar
               ),
             ),
             Text('HTM: ${lokasii.htm}'),

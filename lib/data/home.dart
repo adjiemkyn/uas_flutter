@@ -71,10 +71,9 @@ class home extends StatelessWidget {
                           ),
                           ClipOval(
                             child: Material(
-                              color: Color.fromARGB(
-                                  255, 168, 170, 168), // button color
+                              color: Color.fromARGB(255, 168, 170, 168),
                               child: InkWell(
-                                splashColor: Colors.red, // inkwell color
+                                splashColor: Colors.red,
                                 child: SizedBox(
                                     width: 30,
                                     height: 30,
