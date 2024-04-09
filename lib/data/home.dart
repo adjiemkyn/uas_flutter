@@ -14,11 +14,12 @@ class home extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'Daftar Destinasi Wisata',
+          'Destinasi Wisata Di Bali',
           style: TextStyle(
             fontFamily: 'MyCustomFont',
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
         backgroundColor: Color.fromARGB(255, 37, 134, 244),
